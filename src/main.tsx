@@ -1,11 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
 import './index.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import LandingHomePage from './pages/landing/Home.tsx'
 import LandingLayout from './layout/Landing.tsx'
 import SearchCarPage from './pages/landing/SearchCar.tsx'
+import DashboardLayout from './layout/Dashboard.tsx'
+import DashboardHomePage from './pages/dashboard/Home.tsx'
+import DashboardCarsPage from './pages/dashboard/Cars.tsx'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 const router = createBrowserRouter([
   {
@@ -23,12 +27,18 @@ const router = createBrowserRouter([
     ]
   },
   {
-    path: '/cars',
-    element: <App/>
-  },
-  {
     path: '/dashboard',
-    element: <App/>
+    element: <DashboardLayout/>,
+    children: [
+      {
+        path: '/dashboard',
+        element: <DashboardHomePage/>
+      },
+      {
+        path: '/dashboard/cars',
+        element: <DashboardCarsPage/>
+      }
+    ]
   }
 ])
 
