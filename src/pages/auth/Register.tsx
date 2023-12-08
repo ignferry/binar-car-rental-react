@@ -2,9 +2,12 @@ import { Container, Card, Button, Form } from 'react-bootstrap';
 import { EventTargetForm } from '../../types/EventTargetForm'
 import { httpFetch } from '../../utils/http';
 import { useNavigate } from 'react-router-dom';
+import { useLocalStorage } from "../../hooks/useLocalStorage";
+import { useEffect } from 'react';
 
 function RegisterPage() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const [auth] = useLocalStorage('auth', {});
   async function submitLogin(e: React.FormEvent<HTMLFormElement>) {
     try {
       e.preventDefault();
@@ -22,6 +25,11 @@ function RegisterPage() {
     }
   }
 
+  useEffect(() => {
+    if (auth.token) {
+        return navigate("/dashboard");
+    }
+  });
 
   return (
     <Container className='d-flex justify-content-center align-items-center vh-100' fluid={true}>

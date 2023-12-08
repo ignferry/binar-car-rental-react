@@ -1,18 +1,19 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import './index.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import LandingHomePage from './pages/landing/Home.tsx'
 import LandingLayout from './layout/Landing.tsx'
 import SearchCarPage from './pages/landing/SearchCar.tsx'
 import DashboardLayout from './layout/Dashboard.tsx'
 import DashboardHomePage from './pages/dashboard/Home.tsx'
-import DashboardCarsPage from './pages/dashboard/Cars.tsx'
+import DashboardCarListPage from './pages/dashboard/CarList.tsx'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import LoginPage from './pages/auth/Login.tsx';
 import UserInfoProvider from './context/userInfo.tsx'
 import RegisterPage from './pages/auth/Register.tsx'
+import CreateCarPage from './pages/dashboard/CreateCar.tsx'
+import EditCarPage from './pages/dashboard/EditCar.tsx'
 
 function withUserContext(element: React.ReactNode) {
   return (
@@ -56,7 +57,15 @@ const router = createBrowserRouter([
       },
       {
         path: '/dashboard/cars',
-        element: <DashboardCarsPage/>
+        element: <DashboardCarListPage/>
+      },
+      {
+        path: '/dashboard/cars/create',
+        element: <CreateCarPage/>
+      },
+      {
+        path: '/dashboard/cars/:id/edit',
+        element: <EditCarPage/>
       }
     ]
   }

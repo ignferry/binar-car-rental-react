@@ -1,4 +1,5 @@
 import { Car } from "../../types/Car";
+import UserIcon from "../../assets/fi_users.png";
 import SettingsIcon from "../../assets/fi_settings.png";
 import CalendarIcon from "../../assets/fi_calendar.png";
 
@@ -28,7 +29,7 @@ export default function CarCard(props: {car: Car}) {
                 <span className="car-harga d-block pb-2 fw-bold">Rp {numToString(props.car.rent_per_day)} / hari</span>
                 <p className="car-desc">{props.car.description}</p>
                 <div className="d-flex car-prop pb-2">
-                    <img src="./assets/fi_users.png" className="img-fluid pe-2"/>
+                    <img src={UserIcon} className="img-fluid pe-2"/>
                     <span className="">{props.car.capacity} orang</span>
                 </div>
                 <div className="d-flex car-prop pb-2">

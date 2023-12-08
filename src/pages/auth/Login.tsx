@@ -4,12 +4,12 @@ import { httpFetch } from '../../utils/http';
 import { useNavigate } from 'react-router-dom'
 import { useLocalStorage } from '../../hooks/useLocalStorage'
 import { TUserInfoContext, UserInfoContext } from '../../context/userInfo'
-import { ContextType, useContext, Context } from 'react'
+import { ContextType, useContext, useEffect, Context } from 'react'
 
 function LoginPage() {
   const navigate = useNavigate()
   // eslint-disable-next-line
-  const [_token, setToken] = useLocalStorage('auth', {})
+  const [token, setToken] = useLocalStorage('auth', {})
   // eslint-disable-next-line
   const { userInfo, saveUserInfo } = useContext(UserInfoContext) as ContextType<Context<TUserInfoContext>>
 
@@ -31,6 +31,12 @@ function LoginPage() {
       throw error as Error;
     }
   }
+
+  useEffect(() => {
+    if (token.token) {
+        return navigate("/dashboard");
+    }
+  });
 
 
   return (
