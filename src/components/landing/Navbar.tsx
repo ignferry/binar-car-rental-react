@@ -1,7 +1,9 @@
 import { useEffect } from 'react';
 import Logo from '../../assets/Logo.png';
+import { useNavigate } from 'react-router-dom';
 
 export default function Navbar() {
+    const navigate = useNavigate();
     useEffect(() => {
         // Close side navbar on link click
         window.onload = () => {
@@ -40,7 +42,8 @@ export default function Navbar() {
                                 <a className="nav-link" href="#faq">FAQ</a>
                             </li>
                         </ul>
-                        <button className="btn btn-success p-2">Register</button>
+                        <button className="btn btn-success p-2 me-2" onClick={() => {navigate("/login")}}>Login</button>
+                        <button className="btn btn-success p-2" onClick={() => {navigate("/register")}}>Register</button>
                     </div>
 
                     <div id="sideNavBar" className="offcanvas-md offcanvas-end d-block d-md-none w-50 py-3" tabIndex={-1} >
@@ -63,7 +66,8 @@ export default function Navbar() {
                                     <a href="#faq" className="offcanvas-link">FAQ</a>
                                 </li>
                             </ul>
-                            <button className="btn btn-success">Register</button>
+                            <button className="btn btn-success me-2" onClick={() => {navigate("/login")}}>Login</button>
+                            <button className="btn btn-success" onClick={() => {navigate("/register")}}>Register</button>
                         </div>
                     </div>
                 </div>

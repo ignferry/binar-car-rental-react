@@ -28,11 +28,11 @@ export async function httpFetch<TResponse>(
     headers,
     ...options,
   });
-  console.log(res)
 
   if (res.ok) {
     return await res.json();
   } else {
+    alert((await res.json()).message);
     throw new Error(await res.json());
   }
 }

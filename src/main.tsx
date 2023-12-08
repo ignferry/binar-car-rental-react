@@ -10,6 +10,18 @@ import DashboardHomePage from './pages/dashboard/Home.tsx'
 import DashboardCarsPage from './pages/dashboard/Cars.tsx'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
+import LoginPage from './pages/auth/Login.tsx';
+import UserInfoProvider from './context/userInfo.tsx'
+import RegisterPage from './pages/auth/Register.tsx'
+
+function withUserContext(element: React.ReactNode) {
+  return (
+    // @ts-expect-error wrong types
+    <UserInfoProvider>
+      {element}
+    </UserInfoProvider>
+  )
+}
 
 const router = createBrowserRouter([
   {
@@ -27,8 +39,16 @@ const router = createBrowserRouter([
     ]
   },
   {
+    path: 'login',
+    element: withUserContext(<LoginPage/>)
+  },
+  {
+    path: 'register',
+    element: <RegisterPage/>
+  },
+  {
     path: '/dashboard',
-    element: <DashboardLayout/>,
+    element: withUserContext(<DashboardLayout/>),
     children: [
       {
         path: '/dashboard',
