@@ -1,30 +1,22 @@
-# React + TypeScript + Vite
+# Binar Car Rental React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React Application for Binar Car Rental Frontend
 
-Currently, two official plugins are available:
+## How to Run
+- Execute command `npm i` to install required libraries
+- Add or modify `.env` file according to backend configuration
+- Run backend application in this [repository](https://github.com/ignferry/binar-car-management-dashboard)
+- Execute command `npm run dev` to run the server in development mode
+## Endpoints
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Frontend
+| No | URI                      | Description                              |
+| -- | ------------------------ | ---------------------------------------- |
+| 1  | /                        | Landing page                             |
+| 2  | /cars                    | Find car                                 |
+| 3  | /login                   | Login page                               |
+| 4  | /register                | Registration page                        |
+| 5  | /dashboard               | Admin dashboard home page                |
+| 5  | /dashboard/cars          | Admin dashboard car list                 |
+| 5  | /dashboard/cars/create   | Admin dashboard create car               |
+| 5  | /dashboard/cars/:id/edit | Admin dashboard edit car                 |

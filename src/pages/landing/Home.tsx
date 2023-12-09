@@ -6,7 +6,6 @@ import Testimonials from "../../components/landing/Testimonials";
 import WhyUs from "../../components/landing/WhyUs";
 
 import "../../styles/landing.css";
-// import "../../scripts/LandingPage";
 
 export default function LandingHomePage() {
     return (
