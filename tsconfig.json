@@ -22,6 +22,9 @@
 
     "types": ["types/*.d.ts"]
   },
+  "ts-node": {
+    "esm": true
+  },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

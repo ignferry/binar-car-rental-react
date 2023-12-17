@@ -1,3 +1,3 @@
 export type EventTargetForm = {
-    elements: Record<string, { value: string | number }>;
+  elements: Record<string, { value: string | number }>;
 };

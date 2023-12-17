@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 export const useLocalStorage = (
   keyName: string,
-  defaultValue: Record<string, unknown> | undefined
+  defaultValue: Record<string, unknown> | undefined,
 ) => {
   const [storedValue, setStoredValue] = useState(() => {
     try {
