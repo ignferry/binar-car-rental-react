@@ -10,7 +10,7 @@ function LoginPage() {
   const navigate = useNavigate();
   const [token, setToken] = useLocalStorage('auth', {});
   // eslint-disable-next-line
-  const { userInfo, saveUserInfo } = useContext(UserInfoContext) as ContextType<
+  const { saveUserInfo } = useContext(UserInfoContext) as ContextType<
     Context<TUserInfoContext>
   >;
 
