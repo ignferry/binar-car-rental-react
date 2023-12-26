@@ -3,6 +3,7 @@ import '@testing-library/jest-dom/vitest';
 import { render, screen, cleanup } from '@testing-library/react';
 import { UserInfoContext } from '../../context/userInfo.tsx';
 import DashboardNavbar from './Navbar.tsx';
+import { BrowserRouter } from 'react-router-dom';
 
 describe('Dashboard Navbar', () => {
   afterEach(() => {
@@ -21,13 +22,14 @@ describe('Dashboard Navbar', () => {
         }}
       >
         <DashboardNavbar/>
-      </UserInfoContext.Provider>
+      </UserInfoContext.Provider>,
+      {
+        wrapper: BrowserRouter
+      }
     );
 
-    //const dashboardNavbarEmail = screen.getByTestId('dashboard-navbar-email');
-    const dashboardHomeText = screen.getByTestId('dashboard-home-text');
+    const dashboardNavbarEmail = screen.getByTestId('dashboard-navbar-email');
 
-    //expect(dashboardNavbarEmail.textContent).toBe(email);
-    expect(dashboardHomeText.textContent).toBe(email);
+    expect(dashboardNavbarEmail.textContent).toBe(email);
   });
 });
