@@ -3,12 +3,12 @@ import '@testing-library/jest-dom/vitest';
 import { render, screen, cleanup } from '@testing-library/react';
 import Testimonials from './Testimonials';
 
-describe('Landing Page Jumbotron', () => {
+describe('Landing Page Testimonials', () => {
   afterEach(() => {
     cleanup();
   });
 
-  it('renders navigation links', () => {
+  it('renders testimonials', () => {
     render(
         <Testimonials/>
     );

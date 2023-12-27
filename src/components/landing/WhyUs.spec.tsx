@@ -3,12 +3,12 @@ import '@testing-library/jest-dom/vitest';
 import { render, screen, cleanup } from '@testing-library/react';
 import WhyUs from './WhyUs';
 
-describe('Landing Page Jumbotron', () => {
+describe('Landing Page Why Us', () => {
   afterEach(() => {
     cleanup();
   });
 
-  it('renders navigation links', () => {
+  it('renders correctly', () => {
     render(
         <WhyUs/>
     );

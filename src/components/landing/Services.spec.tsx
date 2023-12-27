@@ -3,12 +3,12 @@ import '@testing-library/jest-dom/vitest';
 import { render, screen, cleanup } from '@testing-library/react';
 import Services from './Services';
 
-describe('Landing Page Jumbotron', () => {
+describe('Landing Page Services', () => {
   afterEach(() => {
     cleanup();
   });
 
-  it('renders navigation links', () => {
+  it('renders correctly', () => {
     render(
         <Services/>
     );
