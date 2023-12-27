@@ -28,24 +28,24 @@ export default function CarCard(props: { car: Car }) {
           className="mb-3 img-fluid car-img"
         />
         <div className="car-props">
-          <span className="car-nama-tipe d-block pb-2">
+          <span className="car-nama-tipe d-block pb-2" data-testid="car-card-title">
             {props.car.manufacture} {props.car.model} / {props.car.type}
           </span>
-          <span className="car-harga d-block pb-2 fw-bold">
+          <span className="car-harga d-block pb-2 fw-bold" data-testid="car-card-price">
             Rp {numToString(props.car.rent_per_day)} / hari
           </span>
-          <p className="car-desc">{props.car.description}</p>
+          <p className="car-desc" data-testid="car-card-description">{props.car.description}</p>
           <div className="d-flex car-prop pb-2">
             <img src={UserIcon} className="img-fluid pe-2" />
-            <span className="">{props.car.capacity} orang</span>
+            <span className="" data-testid="car-card-capacity">{props.car.capacity} orang</span>
           </div>
           <div className="d-flex car-prop pb-2">
             <img src={SettingsIcon} className="img-fluid pe-2" />
-            <span>{props.car.transmission}</span>
+            <span data-testid="car-card-transmission">{props.car.transmission}</span>
           </div>
           <div className="d-flex car-prop pb-2">
             <img src={CalendarIcon} className="img-fluid pe-2" />
-            <span>Tahun {props.car.year}</span>
+            <span data-testid="car-card-year">Tahun {props.car.year}</span>
           </div>
         </div>
         <button className="w-100 btn btn-success mt-2">Pilih Mobil</button>
