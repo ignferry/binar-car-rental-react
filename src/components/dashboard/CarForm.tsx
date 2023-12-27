@@ -112,7 +112,7 @@ export default function CarForm(props: { car?: Car }) {
   return (
     <Form onSubmit={props.car ? updateCar : addCar}>
       <Form.Group className="mb-3" controlId="plate">
-        <Form.Label>Plate</Form.Label>
+        <Form.Label data-testid="dashboard-car-form-plate">Plate</Form.Label>
         <Form.Control
           type="text"
           placeholder="Enter plate"
@@ -121,7 +121,7 @@ export default function CarForm(props: { car?: Car }) {
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="manufacture">
-        <Form.Label>Manufacture</Form.Label>
+        <Form.Label data-testid="dashboard-car-form-manufacture">Manufacture</Form.Label>
         <Form.Control
           type="text"
           placeholder="Enter manufacture"
@@ -130,7 +130,7 @@ export default function CarForm(props: { car?: Car }) {
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="model">
-        <Form.Label>Model</Form.Label>
+        <Form.Label data-testid="dashboard-car-form-model">Model</Form.Label>
         <Form.Control
           type="text"
           placeholder="Enter model"
@@ -139,7 +139,7 @@ export default function CarForm(props: { car?: Car }) {
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="rent_per_day">
-        <Form.Label>Rent Per Day</Form.Label>
+        <Form.Label data-testid="dashboard-car-form-rent">Rent Per Day</Form.Label>
         <Form.Control
           type="number"
           placeholder="Enter rent per day"
@@ -147,7 +147,7 @@ export default function CarForm(props: { car?: Car }) {
         />
       </Form.Group>
       <Form.Group className="mb-3" controlId="capacity">
-        <Form.Label>Capacity</Form.Label>
+        <Form.Label data-testid="dashboard-car-form-capacity">Capacity</Form.Label>
         <Form.Control
           type="number"
           placeholder="Enter capacity"
@@ -156,7 +156,7 @@ export default function CarForm(props: { car?: Car }) {
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="description">
-        <Form.Label>Description</Form.Label>
+        <Form.Label data-testid="dashboard-car-form-description">Description</Form.Label>
         <Form.Control
           type="text"
           placeholder="Enter description"
@@ -165,7 +165,7 @@ export default function CarForm(props: { car?: Car }) {
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="available_at">
-        <Form.Label>Available At</Form.Label>
+        <Form.Label data-testid="dashboard-car-form-available-at">Available At</Form.Label>
         <Form.Control
           type="date"
           defaultValue={
@@ -183,7 +183,7 @@ export default function CarForm(props: { car?: Car }) {
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="transmission">
-        <Form.Label>Transmission</Form.Label>
+        <Form.Label data-testid="dashboard-car-form-transmission">Transmission</Form.Label>
         <Form.Control
           type="text"
           placeholder="Enter transmission"
@@ -192,7 +192,7 @@ export default function CarForm(props: { car?: Car }) {
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="type">
-        <Form.Label>Type</Form.Label>
+        <Form.Label data-testid="dashboard-car-form-type">Type</Form.Label>
         <Form.Control
           type="text"
           placeholder="Enter type"
@@ -201,7 +201,7 @@ export default function CarForm(props: { car?: Car }) {
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="year">
-        <Form.Label>Year</Form.Label>
+        <Form.Label data-testid="dashboard-car-form-year">Year</Form.Label>
         <Form.Control
           type="text"
           placeholder="Enter year"
@@ -210,7 +210,7 @@ export default function CarForm(props: { car?: Car }) {
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="options">
-        <Form.Label>Options</Form.Label>
+        <Form.Label data-testid="dashboard-car-form-options">Options</Form.Label>
         <Form.Control
           as="textarea"
           rows={5}
@@ -223,7 +223,7 @@ export default function CarForm(props: { car?: Car }) {
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="specs">
-        <Form.Label>Specs</Form.Label>
+        <Form.Label data-testid="dashboard-car-form-specs">Specs</Form.Label>
         <Form.Control
           as="textarea"
           rows={5}
@@ -236,7 +236,7 @@ export default function CarForm(props: { car?: Car }) {
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="image">
-        <Form.Label>Image</Form.Label>
+        <Form.Label data-testid="dashboard-car-form-image">Image</Form.Label>
         {filename && (
           <Image
             src={`${BACKEND_URL}/cars/image/${filename}`}
@@ -247,7 +247,7 @@ export default function CarForm(props: { car?: Car }) {
         <Form.Control type="file" onChange={handleFileChange} />
       </Form.Group>
 
-      <Button variant="primary" type="submit">
+      <Button variant="primary" type="submit" data-testid="dashboard-car-form-submit">
         Submit
       </Button>
     </Form>

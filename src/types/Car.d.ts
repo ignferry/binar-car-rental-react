@@ -16,8 +16,8 @@ export type Car = {
   specs: string[];
   creator_id: string;
   last_updater_id: string;
-  deleter_id: string;
+  deleter_id: string | null;
   created_at: Date;
   updated_at: Date;
-  deleted_at: Date;
+  deleted_at: Date | null;
 };
